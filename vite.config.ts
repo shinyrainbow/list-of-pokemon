@@ -12,7 +12,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'build',
+    outDir: 'dist',
     commonjsOptions: {
       include: ['tailwind.config.js', 'node_modules/**'],
     },

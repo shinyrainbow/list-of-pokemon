@@ -1,25 +1,15 @@
 import SelectForm from "./SelectForm";
 import NagivateButton from "./NagivateButton";
-import Pokemon, { PokemonItem } from "./Pokemon";
-import usePokemonList, { SortType } from "./hooks/usePokemonList";
-
-export type PokemonListResponse = {
-  count: number;
-  next: string;
-  previos: string;
-  results: any;
-};
-
-export type PokemonListProps = {
-  data: PokemonListResponse;
-};
+import Pokemon from "./Pokemon";
+import usePokemonList from "./hooks/usePokemonList";
+import { PokemonItem, PokemonListProps, SortType } from "./types/pokemon";
 
 const PokemonList = ({ data }: PokemonListProps) => {
   const {
     currentPage,
     nPages,
     sortType,
-    handleSelectFilter,
+    handleSelectSortType,
     currentItems,
     handlePrevious,
     handleNext,
@@ -35,13 +25,13 @@ const PokemonList = ({ data }: PokemonListProps) => {
         <div className="flex items-center gap-[8px]">
           <SelectForm
             sortType={sortType}
-            handleSelectFilter={handleSelectFilter}
+            handleSelectSortType={handleSelectSortType}
             value={SortType.SORT_NAME}
             text="Sort Name"
           />
           <SelectForm
             sortType={sortType}
-            handleSelectFilter={handleSelectFilter}
+            handleSelectSortType={handleSelectSortType}
             value={SortType.SORT_ID}
             text="Sort ID"
           />

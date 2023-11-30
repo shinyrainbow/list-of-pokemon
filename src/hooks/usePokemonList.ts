@@ -1,31 +1,25 @@
-import { useState } from "react";
-import { PokemonListResponse } from "../PokemonList";
+import { ChangeEvent, useState } from "react";
+import { PokemonListResponse, SortType } from "../types/pokemon";
 
-export enum SortType {
-    SORT_NAME = "sortName",
-    SORT_ID = "sortID",
-  }
-  
 const usePokemonList = (data: PokemonListResponse) => {
   const { results } = data;
   const sorted = [...results];
   const [sortType, setSortType] = useState(SortType.SORT_ID);
   const [sortedData, setSortedData] = useState(sorted);
 
-  const handleSelectFilter = (e: any) => {
-    const selectType = e.target.value;
+  const handleSelectSortType = (e: ChangeEvent<HTMLInputElement>) => {
+    const selectType = e.target.value as SortType;
     setSortType(selectType);
 
-    if (selectType === "sortName") {
+    if (selectType === SortType.SORT_NAME) {
       const final = sortedData.sort(function (a, b) {
         return a.name.localeCompare(b.name);
       });
       setSortedData(final);
-      setCurrentPage(1);
     } else {
       setSortedData(sorted);
-      setCurrentPage(1);
     }
+    setCurrentPage(1);
   };
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -51,7 +45,7 @@ const usePokemonList = (data: PokemonListResponse) => {
     currentPage,
     nPages,
     sortType,
-    handleSelectFilter,
+    handleSelectSortType,
     currentItems,
     handlePrevious,
     handleNext,

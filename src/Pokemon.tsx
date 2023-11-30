@@ -1,10 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-
-export type PokemonItem = {
-  name: string;
-  url: string;
-};
+import { PokemonItem } from "./types/pokemon";
 
 const Pokemon = ({ name, url }: PokemonItem) => {
   const { data, isLoading } = useQuery({

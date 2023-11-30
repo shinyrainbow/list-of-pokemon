@@ -26,7 +26,7 @@ const PokemonList = ({ data }: PokemonListProps) => {
   } = usePokemonList(data);
 
   return (
-    <div className="bg-[#F6F6F7] p-[32px] h-screen scroll-x-0">
+    <div className="bg-[#F6F6F7] p-[48px] h-screen scroll-x-0">
       <div className="flex justify-between items-center pb-[16px]">
         <span className="text-[#363545] text-[32px] leading-[36px] tracking-[2%] headline font-medium">
           All the Pokemon!

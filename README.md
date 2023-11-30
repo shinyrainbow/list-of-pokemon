@@ -1,5 +1,4 @@
-# front-end-responsive
-
+# list-of-pokemon
 
 # Run code:
 npm install\

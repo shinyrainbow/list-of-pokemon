@@ -8,13 +8,13 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      'tailwind.config.js': path.resolve(__dirname, 'tailwind.config.js'),
+      'tailwind.config.ts': path.resolve(__dirname, 'tailwind.config.ts'),
     },
   },
   build: {
-    outDir: 'dist',
+    outDir: 'build',
     commonjsOptions: {
-      include: ['tailwind.config.js', 'node_modules/**'],
+      include: ['tailwind.config.ts', 'node_modules/**'],
     },
   },
   server: {

@@ -2,7 +2,8 @@
 
 # Run code:
 npm install\
-npm start
+npm start\
+open http://localhost:8080/
 
 # DEMO:
 https://list-of-pokemon.vercel.app/

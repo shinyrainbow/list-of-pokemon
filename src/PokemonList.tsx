@@ -18,7 +18,7 @@ const PokemonList = ({ data }: PokemonListProps) => {
   return (
     <div className="bg-[#F6F6F7] p-[48px] h-screen scroll-x-0">
       <div className="flex justify-between items-center pb-[16px]">
-        <span className="text-[#363545] text-[32px] leading-[36px] tracking-[2%] headline font-medium">
+        <span className="text-[#363545] text-[32px] leading-[36px] tracking-[0.32px] headline font-medium">
           All the Pokemon!
         </span>
 
@@ -38,7 +38,7 @@ const PokemonList = ({ data }: PokemonListProps) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-[16px]">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-[16px]">
         {currentItems.map((pokemon: PokemonItem) => {
           const { name, url } = pokemon;
           return <Pokemon key={name} name={name} url={url} />;
@@ -46,7 +46,7 @@ const PokemonList = ({ data }: PokemonListProps) => {
       </div>
 
       <div className="fixed w-full bottom-0 left-0 right-0">
-        <div className="flex justify-between p-[32px]">
+        <div className="flex justify-between p-[48px]">
           <NagivateButton
             disabled={currentPage === 1}
             handleClick={handlePrevious}

@@ -2,22 +2,21 @@ import { ChangeEvent, useState } from "react";
 import { PokemonListResponse, SortType } from "../types/pokemon";
 
 const usePokemonList = (data: PokemonListResponse) => {
-  const { results } = data;
-  const sorted = [...results];
+  const { results: sortedById } = data;
   const [sortType, setSortType] = useState(SortType.SORT_ID);
-  const [sortedData, setSortedData] = useState(sorted);
+  const [sortedData, setSortedData] = useState(sortedById);
 
   const handleSelectSortType = (e: ChangeEvent<HTMLInputElement>) => {
     const selectType = e.target.value as SortType;
     setSortType(selectType);
 
     if (selectType === SortType.SORT_NAME) {
-      const final = sortedData.sort(function (a, b) {
+      const finalData = sortedData.sort(function (a, b) {
         return a.name.localeCompare(b.name);
       });
-      setSortedData(final);
+      setSortedData(finalData);
     } else {
-      setSortedData(sorted);
+      setSortedData(sortedById);
     }
     setCurrentPage(1);
   };
@@ -27,7 +26,7 @@ const usePokemonList = (data: PokemonListResponse) => {
   const indexOfLastItem = currentPage * itemPerPage;
   const indexOfFirstItem = indexOfLastItem - itemPerPage;
   const currentItems = sortedData.slice(indexOfFirstItem, indexOfLastItem);
-  const nPages = Math.ceil(results.length / itemPerPage);
+  const nPages = Math.ceil(sortedById.length / itemPerPage);
 
   const handlePrevious = () => {
     if (currentPage > 1) {

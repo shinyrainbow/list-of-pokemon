@@ -18,7 +18,7 @@ const Pokemon = ({ name, url }: PokemonItem) => {
           <div className="w-[72px] h-[72px] bg-gray-200"></div>
         )}
       </div>
-      <div className="ml-[8px] leading-[24px] text-[20px] tracking-[2%] font-medium">
+      <div className="ml-[8px] leading-[24px] text-[20px] tracking-[0.32px] font-medium subtitle">
         {name.charAt(0).toUpperCase() + name.slice(1)}
       </div>
     </div>

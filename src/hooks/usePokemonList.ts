@@ -11,12 +11,12 @@ const usePokemonList = (data: PokemonListResponse) => {
     setSortType(selectType);
 
     if (selectType === SortType.SORT_NAME) {
-      const finalData = sortedData.sort(function (a, b) {
+      const finalData = sortedData.slice().sort(function (a, b) {
         return a.name.localeCompare(b.name);
       });
       setSortedData(finalData);
     } else {
-      setSortedData(sortedById);
+      setSortedData(sortedById.slice());
     }
     setCurrentPage(1);
   };

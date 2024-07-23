@@ -37,12 +37,11 @@ const SelectForm = ({
           </svg>
         </span>
       </div>
-      <label
-        htmlFor={value}
-        className="cursor-pointer leading-[32px] text-[20px] py-[10px] subtitle"
-      >
-        {text}
-      </label>
+      <div className="leading-[32px] text-[20px] py-[10px] font-light">
+        <label htmlFor={value} className="cursor-pointer">
+          {text}
+        </label>
+      </div>
     </div>
   );
 };

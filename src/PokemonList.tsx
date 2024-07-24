@@ -18,7 +18,7 @@ const PokemonList = ({ data }: PokemonListProps) => {
   return (
     <div className="bg-[#F6F6F7] p-[48px] h-screen scroll-x-0">
       <div className="flex justify-between items-center pb-[16px]">
-        <span className="text-[#363545] text-[32px] leading-[36px] tracking-[0.32px] headline font-medium">
+        <span className="text-[#363545] text-[32px] leading-[36px] tracking-[0.32px] headline">
           All the Pokemon!
         </span>
 

@@ -2,10 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-.headline{
-  font-family: 'Encode sans';
+.headline {
+  font-family: 'Encode Sans', 'sans-serif';
+  font-weight: 500;
 }
 
-.subtitle{
-  font-family: 'Roboto';
+.headline-pokemon {
+  font-family: 'Encode Sans', 'sans-serif';
+  font-weight: 500;
+}
+
+.subtitle {
+  font-family: 'Roboto', 'sans-sarif';
+  font-weight: 400;
 }
